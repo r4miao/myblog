@@ -4,7 +4,7 @@ setlocal
 REM Change directory to your website folder
 cd "C:\Users\miaol\OneDrive - Clemson University\blog_website"
 
-REM Check if the folder is already a Git repository
+REM Check if Git is initialized
 if not exist .git (
     git init
     echo Initialized Git repository.
@@ -12,8 +12,11 @@ if not exist .git (
     echo Git repository already exists.
 )
 
-REM Check if the remote origin is already set
-git remote | find "origin" >nul
+REM Set branch name to main
+git branch -M main
+
+REM Set remote URL to DeepSouthTours repo
+git remote get-url origin >nul 2>&1
 if errorlevel 1 (
     git remote add origin https://github.com/r4miao/myblog.git
     echo Remote origin added.
@@ -21,14 +24,17 @@ if errorlevel 1 (
     echo Remote origin already exists.
 )
 
-REM Make an initial commit if none exists
+REM Stage and commit changes
 git add .
-git commit -m "Initial commit" 2>nul || echo Commit already exists.
+git commit -m "Sync commit" 2>nul || echo Nothing new to commit.
 
-REM Ensure the branch is named 'master'
-git branch -M master
+REM Remove cached GitHub credentials (triggers login prompt)
+cmdkey /delete:git:https://github.com >nul 2>&1
+echo Cleared cached credentials. You will be prompted to enter username and PAT.
 
-REM Pull and push
-git pull origin master --allow-unrelated-histories
-git push origin master
+REM Pull and push to remote repo
+git pull origin main --allow-unrelated-histories --no-edit
+git push origin main
+
 pause
+endlocal
