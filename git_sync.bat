@@ -14,7 +14,13 @@ git commit -m "Sync commit" 2>nul
 
 REM Clear credentials and sync
 cmdkey /delete:git:https://github.com >nul 2>&1
-git pull origin main --allow-unrelated-histories --no-edit 2>nul
-git push -u origin main
+echo Pulling changes...
+git pull origin main --allow-unrelated-histories --no-edit
+echo Pushing changes...
+git push origin main
+if errorlevel 1 (
+    echo Push failed. Trying with upstream tracking...
+    git push -u origin main
+)
 
 pause
