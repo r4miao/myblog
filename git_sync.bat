@@ -33,8 +33,29 @@ cmdkey /delete:git:https://github.com >nul 2>&1
 echo Cleared cached credentials. You will be prompted to enter username and PAT.
 
 REM Pull and push to remote repo
+echo Pulling from remote...
 git pull origin main --allow-unrelated-histories --no-edit
-git push origin main
+if errorlevel 1 (
+    echo Warning: Pull encountered an error, but continuing...
+)
+
+echo Pushing to remote...
+git push -u origin main
+if errorlevel 1 (
+    echo Error: Push failed. Check your credentials and network connection.
+    echo Trying push without -u flag...
+    git push origin main
+    if errorlevel 1 (
+        echo Push still failed. Please check:
+        echo 1. Your GitHub credentials (username and Personal Access Token)
+        echo 2. Network connection
+        echo 3. Repository permissions
+    ) else (
+        echo Successfully pushed to remote repository.
+    )
+) else (
+    echo Successfully pushed to remote repository.
+)
 
 pause
 endlocal
