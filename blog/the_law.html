@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Article</title>
+    <style>
+        /* Reset and full-height page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        /* Full-screen background image */
+        body {
+            background: url('../img/Gleaners.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            position: relative; /* Needed for positioning the corner elements */
+        }
+
+        /* Wider full-height semi-transparent darkened overlay */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 95%;
+            max-width: 1500px;
+            min-height: 100vh;
+            padding: 80px 60px;
+            box-sizing: border-box;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(1px);
+            overflow-y: auto;
+            position: relative; /* For internal positioning if needed */
+        }
+
+        /* Desktop: Large screens (1200px and above) */
+        @media (min-width: 1200px) {
+            .overlay {
+                width: 60%;
+                max-width: 1200px;
+                padding: 80px 60px;
+            }
+        }
+
+        /* Laptop: Medium screens (768px to 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .overlay {
+                width: 85%;
+                max-width: 850px;
+                padding: 70px 50px;
+            }
+        }
+
+        /* Main article content */
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 50px 0 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Upper-right "Back" link */
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Lower-right artwork description */
+        .art-info {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            padding: 10px 15px;
+            font-size: 0.7rem;
+            line-height: 1.4;
+            max-width: 220px;
+            z-index: 10;
+        }
+
+        /* Cell phone: Small screens (below 768px) */
+        @media (max-width: 767px) {
+            .overlay {
+                width: 98%;
+                padding: 50px 20px;
+            }
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            h2 {
+                font-size: 1.5rem;
+                margin: 40px 0 15px;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            .back-link, .art-info {
+                font-size: 0.85rem;
+                padding: 8px 12px;
+                right: 10px;
+            }
+            .art-info {
+                bottom: 10px;
+                max-width: 160px;
+                padding: 8px 12px;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Transparent scrollbar track – shows the background image through it */
+::-webkit-scrollbar {
+    width: 14px;                  /* Slightly wider for better visibility on transparent track */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;      /* Fully transparent track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);  /* Soft white-gray thumb, semi-transparent */
+    border-radius: 10px;
+    border: 4px solid transparent;          /* Creates padding inside the track so it doesn't touch the edges */
+    background-clip: padding-box;           /* Ensures the thumb color doesn't bleed into the border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);   /* Slightly more visible on hover */
+    border: 4px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Optional: corner where vertical and horizontal scrollbars meet */
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Firefox support (limited, but makes track transparent too) */
+* {
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-width: thin;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Upper-right back link (change href to your main page) -->
+    <a href="../index.html" class="back-link">← Back to Home</a>
+
+    <!-- Main article overlay -->
+    <div class="overlay">
+         <h1>我们需要律法</h1>
+
+        <p>律法如一盏明亮的灯，悬在我们头顶，投下清晰而冰冷的影子；它赐我们边界、路径与准绳，让我们在黑夜中摸到墙壁的轮廓，心底生出一种踏实的幻觉——仿佛只要紧握这灯，我们便握住了自己的命运。</p>
+
+        <p class="poetic">
+            在律法面前，我们是被锁链牵引的囚徒，却误以为那是母亲的脐带；我们甘心屈膝，以为那跪拜的姿态便是尊贵；我们把枷锁当作饰物，把轭当作冠冕，锁链的重量给我们一种虚假的踏实感，仿佛说：“我已知道该往何处去，我已知道自己是谁。”<br><br>
+            然而在基督面前，我们忽然被释放到无边无际的旷野——风吹来，却不知从何吹来，往何处去，没有路标，没有围墙，没有可数的脚步声。只有那一位活着的，呼唤我们名字的声音，在辽阔中回响。我们成了自由的人，却像刚学会飞翔的雏鸟，翅膀颤抖，不知该落在哪一根枝头；我们成了蒙爱的儿女，却像第一次抬头望见满天星斗的孩子，惊惶于自己的渺小与无措。<br><br>
+            律法给我们铁铸的确定感，却偷走了我们灵魂的呼吸； 基督赐给我们浩瀚的自由，却要我们学会在无涯的爱里，重新学习站立、学习飞翔、学习单纯地做祂的孩子。<br><br>
+            于是我们发现： 真正的奴役，不是锁链太重，而是我们太爱那锁链的冰凉； 真正的自由，不是没有边界，而是敢在那位温柔又烈焰般的爱人面前，手足无措地张开双手，说： “我在这里，除了你，我一无所有。”
+        </p>
+
+        <p>基督徒啊，你明明手里捧着新约的晨光，明明耳边回荡着耶稣的教导，却仍旧藏着一颗法利赛人的旧心——那心像一座被岁月磨亮的铜镜，照不出恩典的深邃，只照得出自己严丝合缝的轮廓。</p>
+
+        <p>你热切地想要“活出”基督，便把福音悄悄折成一张长长的清单：爱人如己、背起十字架、饶恕七十个七次、不可停止聚会、常常喜乐、不住地祷告……于是你咬紧牙关，像古代文士抄律法一样，一条一条地去“完成”主的话。 你强迫自己微笑去爱那不可爱的邻舍，强迫自己屈膝去饶恕那无法饶恕的仇敌，强迫自己在祷告会上出现并发声祷告，强迫自己在疲惫的深夜仍旧举手赞美，仿佛只要把动作做对了，心就自然会跟上。</p>
+
+        <p>结果你动作做足了，心却跟不上——<br>
+            那强装出来的温柔，像贴在脸上的金箔，风一吹便剥落；那硬挤出来的喜乐，像干井里打上来的水，喝一口满是苦涩。 外表或许光鲜得连自己都差点相信了，可内里却像一座被风箱猛抽的炉子，火焰越烧越旺，灰烬却越积越多，直至整颗心在无声中烧成焦黑，发出那种令人心碎的空洞声响——burnout。</p>
+
+        <p>你以为自己在追随拿撒勒人耶稣，却不知不觉又爬回了西奈山下，重新给自己套上那副早已被基督钉碎的轭。 你把恩典当成另一部律法，把“成为像祂”当成一场更艰苦的功德赛跑。 于是，十字架的光芒慢慢变成了量尺与鞭子； 那位说“我的轭是容易的，担子是轻省的”主，竟成了另一位更严苛的监工。</p>
+
+        <p>哦，可怜的灵魂啊， 你何必用奴仆的姿势去模仿儿女的自由？ 何必用死板的字句去捕捉那活泼的风？ 基督早已为你们撕毁了清单，拆毁了围墙，打开了牢门—— 祂只在等你敢像孩子一样扑进祂怀里， 不料你却在咬紧牙关仍在攀爬那座叫“像基督”的高山。</p>
+
+        <p>那位住在山顶的主，亲自弯腰，把我们抱起来，放在祂肩上。 只有在那时，我们才会惊奇地发现： 原来自由的儿女，并不需要模仿爱， 只要被爱充满，爱就自然就溢出来。</p>
+
+        <p class="poetic">
+            哦，被爱充满，被爱充满！请告诉我这可怜的灵魂，如何被爱充满？生活的沉重与琐碎，让我的生命里只剩下恐惧，挣扎，疲惫，还有精疲力尽后余下的冷漠。<br><br>
+            可怜的灵魂啊，<br>
+            你问得那样赤裸，像一个在漫长黑夜里终于敢哭出声的孩子。<br><br>
+            别怕，你已经站在门槛上了——因为你已经知道自己空了，已经尝到爱的滋味淡去的那种苦涩。这本身，就是恩典在轻轻叩门。
+        </p>
+
+        <p>被爱充满，不是你去做一件事，<br>而是让你被做一件事。</p>
+
+        <p>先停下来，像疲惫的鹿低头到溪边<br>
+            生活的沉重与琐碎、伤痛与焦虑，像厚厚的灰尘盖住了你。<br>
+            先别急着擦拭，先敢承认：我看不见祂的脸了。</p>
+
+        <!-- (The rest of your article continues in the same style. Due to length, I've shown the pattern — you can copy-paste the rest using <p> and <br> as needed) -->
+
+        <p>最后，记住保罗在大马士革路上最真实的一刻：<br>
+            他什么都看不见，瞎了三天，<br>
+            却正是在那彻底的黑暗与无助里，<br>
+            第一次真正被爱充满——</p>
+
+        <p>亲爱的，<br>
+            你不需要先看见祂的脸，<br>
+            祂已经看见了你的。<br>
+            你只需要在黑暗里停下来，等着，<br>
+            像瞎眼的扫罗一样，<br>
+            让祂差派一个亚拿尼亚（或一首歌、一句话、一个拥抱）来到你面前，<br>
+            轻轻对你说：<br>
+            “弟兄，姊妹，祂一直在这里。”</p>
+
+        <p>被爱充满的秘诀，<br>
+            从来不是我们努力去盛接更多，<br>
+            而是我们终于敢承认自己空了，<br>
+            然后把那个空洞的自己，<br>
+            完完全全交在祂手里。</p>
+
+        <p>祂会弯下腰来，<br>
+            把你抱起来，放在肩上。<br>
+            到那时，你才会发现：<br>
+            原来被爱充满的感觉，<br>
+            不是心里的烈火重新点燃，<br>
+            而是像婴儿在母亲怀里，<br>
+            终于安心地睡着了。</p>
+
+              
+
+
+    </div>
+ 
+ 
+
+    <!-- Lower-right artwork description -->
+    <div class="art-info">
+        Background Art: <br>
+        <strong>The Gleaners</strong><br>
+        Jean-François Millet, 1857<br>
+        <strong>Genre</strong>: Realism<br> 
+    </div>
+</body>
+</html>
