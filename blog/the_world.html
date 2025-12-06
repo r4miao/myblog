@@ -29,16 +29,33 @@ body {
 }
         /* Wider full-height semi-transparent darkened overlay */
         .overlay {
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0);
             width: 95%;
             max-width: 1500px;
             min-height: 100vh;
             padding: 80px 60px;
             box-sizing: border-box;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(1px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0);
             overflow-y: auto;
             position: relative; /* For internal positioning if needed */
+        }
+
+        /* Desktop: Large screens (1200px and above) */
+        @media (min-width: 1200px) {
+            .overlay {
+                width: 60%;
+                max-width: 1200px;
+                padding: 80px 60px;
+            }
+        }
+
+        /* Laptop: Medium screens (768px to 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .overlay {
+                width: 85%;
+                max-width: 850px;
+                padding: 70px 50px;
+            }
         }
 
         /* Main article content */
@@ -54,8 +71,8 @@ body {
         }
 
         p {
-            font-size: 1.3rem;
-            line-height: 2;
+            font-size: 1.1rem;
+            line-height: 1.8;
             margin-bottom: 20px;
         }
 
@@ -64,17 +81,12 @@ body {
             position: fixed;
             top: 20px;
             right: 30px;
-            background-color: rgba(0, 0, 0, 0.4);
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
             color: white;
             font-size: 1rem;
             z-index: 10;
-            transition: background-color 0.3s;
-        }
-        .back-link:hover {
-            background-color: rgba(0, 0, 0, 0.4);
         }
 
         /* Lower-right artwork description */
@@ -82,25 +94,42 @@ body {
             position: fixed;
             bottom: 20px;
             right: 30px;
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            max-width: 300px;
+            padding: 10px 15px;
+            font-size: 0.7rem;
+            line-height: 1.4;
+            max-width: 220px;
             z-index: 10;
-            backdrop-filter: blur(2px);
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 800px) {
-            .overlay { padding: 60px 30px; }
-            .back-link, .art-info {
-                font-size: 0.9rem;
-                padding: 10px 15px;
-                right: 15px;
+        /* Cell phone: Small screens (below 768px) */
+        @media (max-width: 767px) {
+            .overlay {
+                width: 98%;
+                padding: 50px 20px;
             }
-            .art-info { bottom: 15px; max-width: 250px; }
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            h2 {
+                font-size: 1.5rem;
+                margin: 40px 0 15px;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            .back-link, .art-info {
+                font-size: 0.85rem;
+                padding: 8px 12px;
+                right: 10px;
+            }
+            .art-info {
+                bottom: 10px;
+                max-width: 160px;
+                padding: 8px 12px;
+                font-size: 0.65rem;
+            }
         }
 
 /* Transparent scrollbar track – shows the background image through it */
@@ -221,7 +250,7 @@ body {
 
     <!-- Lower-right artwork description -->
     <div class="art-info">
-        Background Art: <br><br>
+        Background Art: <br>
         <strong>Christina's World</strong><br>
         Andrew Wyeth, 1948<br>
         <strong>Genre</strong>: American Scene Painting<br> 

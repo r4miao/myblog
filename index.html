@@ -16,7 +16,7 @@
 
         body {
             /* Replace with your own local image if desired */
-            background: url('../img/bible2.jpg') 
+            background: url('img/bible2.jpg') 
                         no-repeat center bottom fixed;
             background-size: cover;
             background-color: rgba(0,0,0,0.7);       /* Dark fallback for any empty areas */
@@ -31,41 +31,41 @@
         .content {
             width: 95%;
             max-width: 1500px;
-            padding: 100px 60px;
+            padding: 40px 60px;
             box-sizing: border-box;
             text-align: center;
             z-index: 1;
         }
 
         h1 {
-            font-size: 3.6rem;
-            margin-bottom: 80px;
+            font-size: 3.2rem;
+            margin-bottom: 30px;
             letter-spacing: 2px;
         }
 
         .quotes {
-            font-size: 1.4rem;
-            line-height: 2;
-            margin: 80px auto;
+            font-size: 1.3rem;
+            line-height: 1.4;
+            margin: 30px auto;
             max-width: 900px;
             font-style: italic;
         }
 
         .quotes p {
-            margin-bottom: 40px;
+            margin-bottom: 15px;
         }
 
         .quotes cite {
             display: block;
             font-style: normal;
-            font-size: 1.1rem;
-            margin-top: 8px;
+            font-size: 1rem;
+            margin-top: 5px;
             opacity: 0.9;
         }
 
         .article-list {
-            margin-top: 120px;
-            font-size: 1.3rem;
+            margin-top: 40px;
+            font-size: 1.2rem;
         }
 
         .article-list ul {
@@ -74,7 +74,7 @@
         }
 
         .article-list li {
-            margin: 30px 0;
+            margin: 15px 0;
         }
 
         .article-list a {
@@ -106,9 +106,26 @@
         * { scrollbar-color: rgba(255, 255, 255, 0.3) transparent; scrollbar-width: thin; }
 
         @media (max-width: 800px) {
-            .content { padding: 80px 30px; }
-            h1 { font-size: 2.8rem; }
-            .quotes { font-size: 1.2rem; }
+            .content { padding: 30px 20px; }
+            h1 { 
+                font-size: 2.2rem; 
+                margin-bottom: 20px;
+            }
+            .quotes { 
+                font-size: 1.1rem; 
+                line-height: 1.3;
+                margin: 20px auto;
+            }
+            .quotes p {
+                margin-bottom: 10px;
+            }
+            .article-list {
+                margin-top: 30px;
+                font-size: 1.1rem;
+            }
+            .article-list li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -129,7 +146,7 @@
 
         <div class="article-list">
             <ul>
-                <li><a href="blog/we-need-the-law.html">Read</a></li>
+                <li><a href="blog/content.html">Read</a></li>
                 <!-- Add more articles here -->
             </ul>
         </div>
